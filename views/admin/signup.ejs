@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title><%= title %></title>
+</head>
+<body>
+  
+       <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-one-quarter">
+         
+            <form method="POST">
+              <h1 class="title">Sign Up</h1>
+              <% if(messages.length >0 ){ %>
+                <div class="help is-danger">
+                 
+            
+                       <% messages.forEach(msg =>{  %> 
+                       <%= msg %> <br>
+                       <%  } )  %> 
+                 </div>
+             <% } %> 
+              <div class="field">
+                <label class="label">Email</label>
+                <input  class="input" placeholder="Email" name="email" />
+               
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <input  class="input" placeholder="Password" name="password" type="password" />
+               
+              </div>
+              <div class="field">
+                <label class="label">Password Confirmation</label>
+                <input  class="input" placeholder="Password Confirmation" name="passwordConf" type="password" />
+               
+              </div>
+              <button class="button is-primary">Submit</button>
+            </form>
+            <a href="/signin">Have an account? Sign In</a>
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>

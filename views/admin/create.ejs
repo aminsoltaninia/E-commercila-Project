@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title><%= title %></title>
+</head>
+<body>
+   
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-one-quarter">
+              
+          
+            <form method="POST" enctype="multipart/form-data">
+              <h1 class="title">create Product</h1>
+              <% if(messages.length >0 ){ %>
+                <div class="help is-danger">
+                 
+            
+                       <% messages.forEach(msg =>{  %> 
+                       <%= msg %> <br>
+                       <%  } )  %> 
+                 </div>
+             <% } %> 
+              <div class="field">
+                <label class="label">title</label>
+                <input  class="input" placeholder="title" name="title" />
+               
+              </div>
+              <div class="field">
+                <label class="label">price</label>
+                <input  class="input" placeholder="price" name="price" type="price" />
+             
+              </div>
+              <div class="field">
+                <label class="label">picture</label>
+                <input class="input" placeholder="image" name="image" type="file" />
+             
+              </div>
+              <button class="button is-primary">Submit</button>
+            </form>
+            <a href="/admin/products">list of product</a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
